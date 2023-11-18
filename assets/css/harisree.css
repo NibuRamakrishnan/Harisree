@@ -1,0 +1,99 @@
+.logoholder
+{
+    width: 20%;
+    float: left;
+}
+.logoname
+{
+    padding: 6% 0% 0% 23%;
+    font-weight: 700;
+    color: #002d5b;
+    font-size: x-large;
+}
+.menu-active{
+color:red !important;
+}
+.pdfholderframe
+{
+    width: 100%;
+    height: 700px;
+    border: none;
+}
+.cat-list li a
+{
+    font-family: "Poppins",sans-serif;
+    color: #506172;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+.blog_right_sidebar .card
+{
+    display: none;
+}
+.like-a{
+    cursor: pointer !important;
+}
+#lbllike
+{
+    font-size: 14px !important;
+}
+a{
+    cursor: pointer !important;
+}
+.likes{
+    color: red !important;
+}
+.mleft10{
+    margin-left: 10px !important;
+}
+.error{ 
+    color: red;
+    font-size: 14px; 
+  }
+  .submitbtn{
+    padding: 10px;
+    font-size: 13px;
+    width: 20%;
+    margin-top: 20px;
+    background-color: #3742cc;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  .select-control
+  {
+    width: 75%;
+    padding: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid lightgreen;
+  }
+  .select-control:focus {  
+    border-radius: 0px;
+    border-bottom: 1px solid #17a2b8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .form-control{
+    width: 75%;
+    padding: 10px;
+    border-bottom: 1px solid lightgreen;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    margin-bottom: 20px;
+}
+.form-control:focus {  
+    border-radius: 0px;
+    border-bottom: 1px solid #17a2b8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
