@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <!-- Script Loading.. -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootbox.js"></script>
+    <script src="js/dropdown.min.js"></script>
+    <script src="js/iframeResizer.contentWindow.min.js"></script>
+    <script src="js/iframeResizer.min.js"></script> 
+    <script src="js/jquery.dataTables.min.js"></script> 
+    <script src="js/admin.js"></script>  
+
+    <!-- Styles Loading --> 
+    <link rel="stylesheet" href="css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"> 
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-utilities.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head> 
+<body>   
+   <div class="overlay" style="display: none;">
+      <div class="overlay__inner">
+          <div class="overlay__content"><span class="spinner"></span></div>
+      </div>
+  </div>
+    <div class="wrapper"> 
+        <div class="main-panel-admin">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid"> 
+                   <a id="xmlread" href="#" class="navbar-brand">HARISREE ACADEMY ADMIN PORTAL</a> <button type="button" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="navbar-toggler-bar burger-lines"></span> <span class="navbar-toggler-bar burger-lines"></span> <span class="navbar-toggler-bar burger-lines"></span></button> 
+                   <div class="collapse navbar-collapse justify-content-end">
+                      <ul class="navbar-nav ml-auto"> 
+                         <li data-v-04d9fc75="" aria-haspopup="true" class="dropdown nav-item">
+                            <a style="display: none;" data-v-04d9fc75="" data-toggle="dropdown" class="nav-link dropdown-toggle"><i data-v-04d9fc75=""></i> <span data-v-04d9fc75="" class="no-icon">Dropdown</span> <b data-v-04d9fc75="" class="caret"></b></a> 
+                            <div data-v-04d9fc75="" class="dropdown-menu" style="display: none;">
+                               <a data-v-04d9fc75="" href="#" class="dropdown-item">Action</a> <a data-v-04d9fc75="" href="#" class="dropdown-item">Another action</a> <a data-v-04d9fc75="" href="#" class="dropdown-item">Something</a> <a data-v-04d9fc75="" href="#" class="dropdown-item">Another action</a> <a data-v-04d9fc75="" href="#" class="dropdown-item">Something</a> 
+                               <div data-v-04d9fc75="" class="divider"></div>
+                               <a data-v-04d9fc75="" href="#" class="dropdown-item">Separated link</a>
+                            </div>
+                         </li> 
+                      </ul>
+                   </div>
+                </div>
+             </nav>
+             <div class="content">
+                <div class="container-fluid"> 
+                    <div class="row">  
+                         <div class="col-lg-8 col-sm-12">
+                           <div class="card">
+                              <div class="card-header">
+                                 <h4 class="card-title">Portal PDFs</h4>
+                                 <p class="card-category" id="lblpdfname">
+                                  Here, showing pdf that are already saved in the portal.
+                                  </p>
+                              </div>
+                              <div class="card-body">
+                                 <div id="div_727804942157" class="ct-chart-admin">  
+                                    <table id="pdftable">
+                                       <thead>
+                                          <tr>
+                                             <th>Action</th>
+                                             <th>Category</th>
+                                             <th>PDF Name</th>
+                                             <th>PDF Display Text</th>
+                                             <th>PDF Location</th>
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                              </div>
+                              <div class="card-footer">
+                                  
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-12">
+                           <div class="card">
+                              <div class="card-header">
+                                 <h4 class="card-title">PDF MANAGEMENT</h4>
+                                 <p class="card-category" id="lblpdfname">
+                                   Add new pdf from the below form.
+                                  </p>
+                              </div>
+                              <div class="card-body">
+                                 <div id="div_727804942157" class="ct-chart-admin"> 
+                                   <p class="error" style="display: none;" id="lblerror">Please select pdf category</label>
+                                   <div class="input-holder">
+                                       <select id="pdf_category" class="select-control">
+                                           <option value="0">--Select PDF Category--</option>
+                                           <option value="1">Question Paper Set</option>
+                                           <option value="2">Syllabus - Preliminary Exam</option>
+                                           <option value="3">Syllabus - Main</option>
+                                           <option value="4">Question Papers Set (Download PDF)</option>
+                                       </select> 
+                                       <input id="identifier" type="hidden" class="form-control"/> 
+                                       <input id="name" type="text" class="form-control"  placeholder="Please Enter name of PDF"/> 
+                                       <input id="displaytext" type="text" required="true" class="form-control" placeholder="PDF Display Text"/> 
+                                       <input id="pdf_loc" type="text" required="true" class="form-control" placeholder="PDF Location"/> 
+                                       <input type="button" class="submitbtn" id="btnsave" value="Submit"/>
+                                       <input type="button" class="cancelbtn" id="btnclear" value="Cancel" onclick="clearInputs();"/>
+                                   </div>  
+                                 </div>
+                              </div>
+                              <div class="card-footer">
+                                  
+                              </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div> 
+</body>
+</html>

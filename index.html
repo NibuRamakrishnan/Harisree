@@ -1,0 +1,241 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <!-- Script Loading.. -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootbox.js"></script>
+    <script src="js/dropdown.min.js"></script>
+    <script src="js/iframeResizer.contentWindow.min.js"></script>
+    <script src="js/iframeResizer.min.js"></script>
+    <script src="js/main.js"></script> 
+    <!-- Styles Loading --> 
+    <link rel="stylesheet" href="css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"> 
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-utilities.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
+</head> 
+<body>  
+   <div class="overlay" style="display: none;">
+      <div class="overlay__inner">
+          <div class="overlay__content"><span class="spinner"></span></div>
+      </div>
+  </div>
+     <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="#" class="simple-text">
+                        <div class="logo-img">
+                            <img src="images/logo.jpg" alt="">
+                        </div>
+                        HARISREE ACADEMY
+                      </a> 
+                </div>
+                <ul class="nav nav-mobile-menu">
+                    <li data-v-04d9fc75="" aria-haspopup="true" class="dropdown nav-item">
+                        <a data-v-04d9fc75="" data-toggle="dropdown" class="nav-link dropdown-toggle">
+                            <i data-v-04d9fc75="" class="fa fa-globe"></i> 
+                            <b data-v-04d9fc75="" class="caret"></b> 
+                            <span data-v-04d9fc75="" class="notification">5 Notifications</span>
+                        </a> 
+                        <div data-v-04d9fc75="" class="dropdown-menu" style="display: none;"> 
+                            <a data-v-04d9fc75="" href="#" class="dropdown-item">Notification 1</a> 
+                            <a data-v-04d9fc75="" href="#" class="dropdown-item">Notification 2</a> 
+                            <a data-v-04d9fc75="" href="#" class="dropdown-item">Notification 3</a> 
+                            <a data-v-04d9fc75="" href="#" class="dropdown-item">Notification 4</a> 
+                            <a data-v-04d9fc75="" href="#" class="dropdown-item">Another notification</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav"> 
+                    <li class="router-link-exact-active nav-item active">
+                        <a href="#/admin/overview" class="nav-link">
+                            <i class="nc-icon nc-chart-pie-35"></i> 
+                            <p>Home</p>
+                        </a>
+                    </li> 
+                    <li class="">
+                        <a href="#/admin/user" class="nav-link">
+                            <i class="nc-icon nc-circle-09"></i>
+                             <p>MAK@Unacademy</p>
+                            </a>
+                        </li> 
+                        <li class="">
+                            <a href="#/admin/user" class="nav-link">
+                                <i class="nc-icon nc-circle-09"></i>
+                                 <p>Video Classes</p>
+                                </a>
+                            </li> 
+                            <li class="">
+                                <a href="#/admin/user" class="nav-link">
+                                    <i class="nc-icon nc-circle-09"></i>
+                                     <p> Previous Question Papers</p>
+                                    </a>
+                                </li> 
+                                <li class="">
+                                    <a href="#/admin/user" class="nav-link">
+                                        <i class="nc-icon nc-circle-09"></i>
+                                         <p> Syllabus</p>
+                                        </a>
+                                    </li> 
+                                    <li class="">
+                                        <a href="#/admin/user" class="nav-link">
+                                            <i class="nc-icon nc-circle-09"></i>
+                                             <p> Statement Series </p>
+                                            </a>
+                                        </li> 
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid"> 
+                   <a id="xmlread" href="#" class="navbar-brand">HARISREE ACADEMY</a> <button type="button" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="navbar-toggler-bar burger-lines"></span> <span class="navbar-toggler-bar burger-lines"></span> <span class="navbar-toggler-bar burger-lines"></span></button> 
+                   <div class="collapse navbar-collapse justify-content-end">
+                      <ul class="navbar-nav ml-auto"> 
+                         <li data-v-04d9fc75="" aria-haspopup="true" class="dropdown nav-item">
+                            <a style="display: none;" data-v-04d9fc75="" data-toggle="dropdown" class="nav-link dropdown-toggle"><i data-v-04d9fc75=""></i> <span data-v-04d9fc75="" class="no-icon">Dropdown</span> <b data-v-04d9fc75="" class="caret"></b></a> 
+                            <div data-v-04d9fc75="" class="dropdown-menu" style="display: none;">
+                               <a data-v-04d9fc75="" href="#" class="dropdown-item">Action</a> <a data-v-04d9fc75="" href="#" class="dropdown-item">Another action</a> <a data-v-04d9fc75="" href="#" class="dropdown-item">Something</a> <a data-v-04d9fc75="" href="#" class="dropdown-item">Another action</a> <a data-v-04d9fc75="" href="#" class="dropdown-item">Something</a> 
+                               <div data-v-04d9fc75="" class="divider"></div>
+                               <a data-v-04d9fc75="" href="#" class="dropdown-item">Separated link</a>
+                            </div>
+                         </li> 
+                      </ul>
+                   </div>
+                </div>
+             </nav>
+             <div class="content">
+                <div class="container-fluid"> 
+                   <div class="row">
+                      <div class="col-lg-8">
+                         <div class="card">
+                            <div class="card-header">
+                               <h4 class="card-title">Kerala Psc Previous Question Papers and Answers</h4>
+                               <p class="card-category" id="lblpdfname">
+                                10th Level Preliminary Exam Question Papers 2022- 53/2022, 60/2022, 68/2022, 71/2022, 76/2022, 77/2022</p>
+                            </div>
+                            <div class="card-body">
+                               <div id="div_727804942157" class="ct-chart">
+                                <iframe name="myFrame" id="myFrame" autoplay="allow"  class="pdfholderframe"></iframe> 
+                               </div>
+                            </div>
+                            <div class="card-footer">
+                                
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-lg-4">
+                         <div class="card" style="display: none;">
+                            <div class="card-header">
+                               <h4 class="card-title">Question Paper Set</h4>
+                               <p class="card-category">Question Paper Set</p>
+                            </div>
+                            <div class="card-body">
+                               <div id="div_1283190110730" class="ct-chart-custom">
+                                <ul id="category_QPS_1">
+                                    
+                                </ul>
+                               </div>
+                            </div>
+                            <div class="card-footer">
+                                
+                            </div>
+                         </div>
+
+                         <div class="card" style="display: none;">
+                            <div class="card-header">
+                               <h4 class="card-title">Syllabus - Preliminary Exam</h4>
+                               <p class="card-category">Syllabus - Preliminary Exam</p>
+                            </div>
+                            <div class="card-body">
+                               <div id="div_1283190110730" class="ct-chart-custom">
+                                <ul id="category_SPE_2">
+                                   
+                                 </ul> 
+                               </div>
+                            </div>
+                            <div class="card-footer">
+                                
+                            </div>
+                         </div>
+
+                         <div class="card" style="display: none;">
+                            <div class="card-header">
+                               <h4 class="card-title">Syllabus -Main</h4>
+                               <p class="card-category">Syllabus -Main</p>
+                            </div>
+                            <div class="card-body">
+                               <div id="div_1283190110730" class="ct-chart-custom">
+                                 <ul id="category_SM_3">
+                                   
+                                 </ul> 
+                               </div>
+                            </div>
+                            <div class="card-footer">
+                                
+                            </div>
+                         </div>
+
+                         <div class="card" style="display: none;">
+                            <div class="card-header">
+                               <h4 class="card-title">Question Papers Set (Download PDF)</h4>
+                               <p class="card-category">Question Papers Set (Download PDF)</p>
+                            </div>
+                            <div class="card-body">
+                               <div id="div_1283190110730" class="ct-chart-custom">
+                                 <ul id="category_QPSD_4">
+                                   
+                                 </ul> 
+                               </div>
+                            </div>
+                            <div class="card-footer">
+                                
+                            </div>
+                         </div>
+                         
+                      </div>
+                   </div>
+                   <div class="row" style="display: none;">
+                      <div class="col-lg-6">
+                         <div class="card" chart-responsive-options="screen and (max-width: 640px),[object Object]">
+                            <div class="card-header">
+                               <h4 class="card-title">2014 Sales</h4>
+                               <p class="card-category">All products including Taxes</p>
+                            </div>
+                            <div class="card-body">
+                               <div id="div_797742201572" class="ct-chart">
+                                   
+                               </div>
+                            </div>
+                            <div class="card-footer">
+                                
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-lg-6">
+                         <div class="card">
+                            <!----> 
+                            <div class="card-header">
+                               <h5 class="title">Tasks</h5>
+                               <p class="category">Backend development</p>
+                            </div>
+                            <div class="card-body"> 
+                               <div class="footer">
+                                 
+                               </div>
+                            </div>
+                            <!---->
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+        </div>
+     </div>
+</body> 
+</html>
