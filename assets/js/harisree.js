@@ -71,6 +71,7 @@ function fnBindDatatoBar(json){
             $("#category_SM_3").parents(".card").show();
             var dynamic_pdf_holder_c3 = "";
             $.each(category_SM_3, function(i,v){
+                 var likes_no = category_SM_3[i].user_likes;
                 if(likes_no == "" || likes_no == null){
                     category_SM_3[i].user_likes = 0;
                 }
@@ -88,6 +89,7 @@ function fnBindDatatoBar(json){
             $("#category_QPSD_4").parents(".card").show();
             var dynamic_pdf_holder_c4 = "";
             $.each(category_QPSD_4, function(i,v){
+                 var likes_no = category_QPSD_4[i].user_likes;
                 if(likes_no == "" || likes_no == null){
                     category_QPSD_4[i].user_likes = 0;
                 }
