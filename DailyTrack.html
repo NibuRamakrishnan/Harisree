@@ -124,6 +124,7 @@
                   <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         <div class="row"> 
+                            <input type="hidden" id="ID"/>
                             <div class="col-12">
                                 <label class="label">Particulars</label>
                                 <input class="form-control_v2 marginbtm0" id="particulars" name="particulars"
@@ -155,6 +156,28 @@
                                 </select>
                             </div>
                          </div> 
+                         <div class="row">
+                            <div class="col-12 w100">
+                                <button id="btnadd" name="btnadd" class="btn border-btn">Add</button> 
+                            </div>
+                         </div>
+                         <div class="row mt-4">
+                            <table class="table" id="tbl_tempdata_expense">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">
+                                        Action
+                                    </th>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Source</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                </tbody>
+                              </table>
+                         </div>
                     </div>
                   </div>
             </div>
