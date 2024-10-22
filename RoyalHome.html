@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
 </head>
 
-<body>
+<body class="home">
 
    <!-- Preloader Start -->
    <div id="preloader-active" style="display: none;">
@@ -82,7 +82,7 @@
                    <div class="col-xl-12">
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
-                              <h4 class="white-text">Daily Log</h4>
+                              <h4 class="white-text">Home</h4>
                             </div>
                             <div class="header-info-right">
                                 <ul class="header-social">    
@@ -98,157 +98,74 @@
       <!-- Header End -->
   </header> 
    <!--================Blog Area =================-->
+   
    <section class="blog_area single-post-area section-padding">
       <div class="container">
          <div class="row"> 
             <div class="col-12">
-                <label class="label">Date</label>
-                <input class="form-control_v2" type="date" name="log_date" id="log_date"/>
+                <div class="pagetitle">
+                    <h4>Dashboard</h4> 
+                  </div>
             </div>
-         </div>
+         </div> 
          <div class="row"> 
-            <div class="col-12">
-                <label class="label">Opening Balance (INR)</label>
-                <input class="form-control_v2" type="number" name="opening_balance" id="opening_balance"/>
-            </div>
-         </div>
-         <div id="accordion">
-            <div class="card">
-                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"> 
-                    <div class="col-4">
-                        <h5 class="mb-0">
-                            <a data-toggle="collapse" data-target="#collapseOne">Expenses 
-                            </a>
-                            </h5>  
-                    </div> 
-                    <div class="col-7 totalexp">
-                        <label class="totlabel">Total ₹ </label>
-                        <label id="expense_sum">0</label>
-                    </div>
-                    <div class="col-1">
-                        <i class="fa fa-arrow-down mt-1"></i>
-                    </div> 
-                  </div>
-                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <div class="row"> 
-                            <input type="hidden" id="ID"/>
-                            <div class="col-12">
-                                <label class="label">Particulars</label>
-                                <input class="form-control_v2 marginbtm0" id="particulars" name="particulars"
-                                 type="text" placeholder="Search.."> 
-                                <ul class="list-group" id="particularsList" style="display: none;">
-                                <li class="list-group-item plist">Milk</li>
-                                <li class="list-group-item plist">Stock</li> 
-                            </ul>  
-                            </div>
-                         </div>
-                        <div class="row mt-3"> 
-                            <div class="col-12">
-                                <label class="label">Description</label>
-                                <textarea class="form-control_v2" id="descr" name="descr"></textarea>
-                            </div>
-                         </div>
-                         <div class="row"> 
-                            <div class="col-12">
-                                <label class="label">Amount (INR)</label>
-                                <input type="number" name="amount_exp" id="amount_exp" class="form-control_v2"/>
-                            </div>
-                         </div>
-                         <div class="row"> 
-                            <div class="col-12">
-                                <label class="label">Cash from</label>
-                                <select class="form-control_v2" id="cash_from_exp" name="cash_from_exp">
-                                    <option>Shop</option>
-                                    <option>Hand</option>
-                                </select>
-                            </div>
-                         </div> 
-                         <div class="row">
-                            <div class="col-12 w100">
-                                <button id="btnadd" name="btnadd" class="btn border-btn">+Add</button> 
-                            </div>
-                         </div>
-                         <div class="row mt-4">
-                            <table class="table" id="tbl_tempdata_expense">
-                                <thead>
-                                  <tr>
-                                    <th style="width: 30% !important;" scope="col">
-                                        Action
-                                    </th>
-                                    <th scope="col" style="width: 30% !important;">Item</th>
-                                    <th scope="col" style="width: 30% !important;">Amount</th>
-                                    <th scope="col" style="width: 10% !important;">Source</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  
-                                </tbody>
-                              </table>
-                         </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="card mt-3" >
-                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseTwo">
-                    <div class="col-4"> 
-                    <h5 class="mb-0">
-                        <a data-toggle="collapse" data-target="#collapseTwo">Income 
-                        </a>
-                        </h5>
-                    </div> 
-                    <div class="col-7 totalincome">
-                        <label class="totlabel">Total ₹ </label>
-                        <label id="income_sum">0</label>
-                    </div>
-                    <div class="col-1">
-                        <i class="fa fa-arrow-down mt-1"></i>
-                    </div>  
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <div class="row"> 
-                            <div class="col-12">
-                                <label class="label">Cash in Shop (INR)</label>
-                                <input type="number" name="cash_in_shop_income" id="cash_in_shop_income" class="income_prop form-control_v2"/>
-                            </div>
-                         </div>
-                         <div class="row"> 
-                            <div class="col-12">
-                                <label class="label">Cash from Shop (INR)</label>
-                                <input type="number" name="cash_from_shop_income" id="cash_from_shop_income" class="income_prop form-control_v2"/>
-                            </div>
-                         </div>
-                         <div class="row"> 
-                            <div class="col-12">
-                                <label class="label">Cash in Gpay (INR)</label>
-                                <input type="number" name="cash_in_gpay_income" id="cash_in_gpay_income" class="income_prop form-control_v2"/>
-                            </div>
-                         </div>
-                    </div>
-                  </div>
-            </div>
-         </div>
-         <div class="row mt-3">
-            <div class="col-12">
-                <button class="border-btn w100">Save for now</button> 
-            </div>
-         </div>
-         <div class="row mt-3">
             <div class="col-12"> 
-                <button class="btn w100" id="btnsubmit">Submit</button> 
+                <a class="btna" href="Logs.html">
+                    <div class="card info-card sales-card">   
+                      <div class="card-body">
+                        <h5 class="card-title">Bussiness Logs</h5>
+      
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa fa-calendar-alt"></i>
+                          </div>
+                          <div class="pl-4"> 
+                            <span class="text-success small pt-1 fw-bold"><label id="total_logs"></label></span> <span class="text-muted small pt-2 ps-1">logs reported</span>    
+                          </div>
+                        </div>
+                      </div> 
+                    </div> 
+                </a>
             </div>
-         </div>
-         <div class="row mt-3">
-            <div class="col-12"> 
-                <button class="btn w100">Cancel</button>
+            <div class="col-12 mt-3"> 
+                <a class="btna" href="DailyTrack.html">
+                    <div class="card info-card sales-card">   
+                      <div class="card-body">
+                        <h5 class="card-title">Add New Log</h5>
+      
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa fa-calendar-alt"></i>
+                          </div>
+                          <div class="pl-4"> 
+                            <span class="text-success small pt-1 fw-bold">Add todays</label></span> <span class="text-muted small pt-2 ps-1">log</span>    
+                          </div>
+                        </div>
+                      </div> 
+                    </div> 
+                </a>
             </div>
-         </div>
+            <div class="col-12 mt-3"> 
+                <a class="btna" href="Logs.html">
+                    <div class="card info-card sales-card">   
+                      <div class="card-body">
+                        <h5 class="card-title">Reports</h5>
+      
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa fa-calendar-alt"></i>
+                          </div>
+                          <div class="pl-4"> 
+                            <span class="text-success small pt-1 fw-bold">Log</label></span> <span class="text-muted small pt-2 ps-1">Reports</span>    
+                          </div>
+                        </div>
+                      </div> 
+                    </div> 
+                </a>
+            </div>
+         </div> 
       </div>
-   </section>
-   <!--================ Blog Area end =================--> 
-    
-
+   </section> 
 
    <footer>
     <!-- Footer Start-->
@@ -379,18 +296,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="./assets/js/main.js"></script> 
         <script src="./assets/js/jquery.dataTables.min.js"></script>
         <script src="./assets/js/dataTables.jqueryui.min.js"></script> 
-        <script src="./assets/js/royal.js"></script>
-        <script src="./assets/js/bootbox.js"></script>
-        <script>
-            $(document).ready(function(){
-                var urlParams = new URLSearchParams(window.location.search);
-                if(urlParams != null){
-                 var log_id = urlParams.get('log_id');
-                if(log_id != null && log_id.length > 0){
-                    getdetails(log_id);
-                }
-                } 
-            });
-        </script>
+        <script src="./assets/js/bootbox.js"></script> 
+        <script src="./assets/js/localstorage.js"></script> 
 </body> 
 </html>
