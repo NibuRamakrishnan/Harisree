@@ -60,8 +60,11 @@ $(document).ready(function(){
         var sum_income = parseInt(parseInt(amount_1) + parseInt(amount_2) + parseInt(amount_3));
         $("#income_sum").html(sum_income);
     });
-
+    $(".Cancelbtn").on("click", function(){
+        window.location.href="RoyalHome.html";
+    })
     $("#btnsubmit").on("click", function(){
+        $('#preloader-active').show();
         var log_date = $("#log_date").val();
         var open_balance = $("#opening_balance").val();
         var json_expense_string = getExpensejson();
@@ -92,16 +95,22 @@ $(document).ready(function(){
   });
   function dailylogadded(result){
     if(result.result == true){
-        bootbox.alert("Daily log added successfully");
+        bootbox.alert("Daily log added successfully",function(){
+            window.location.href="RoyalHome.html";
+        });
+        $('#preloader-active').hide();
     }
     else  if(result.result == "value updated successfully"){
-        bootbox.alert("Daily log added successfully"); 
+        bootbox.alert("Daily log added successfully", function(){
+            window.location.href="RoyalHome.html";
+        }); 
+        $('#preloader-active').hide();
     }
     else{
         bootbox.alert("Sorry, something went wrong!");
+        $('#preloader-active').hide();
     }
-    loadBussinessLogs();
-  }
+  } 
   function getExpensejson(){
     let jsonData = 
             {
@@ -196,11 +205,33 @@ function fnsetLogsUI(result){
         var htmlDOM = "";
         $.each(result, function(i,v){
             var date = dateConvert(result[i].log_date);
-            var open_balance = result[i].open_balance;
-            var sum_income = result[i].sum_income;
-            var sum_expense = result[i].sum_expense; 
+            var open_balance = "₹" + result[i].open_balance;
+            var sum_income = "₹" + result[i].sum_income;
+            var sum_expense = "₹" + result[i].sum_expense; 
             var id = result[i].id;
-            htmlDOM = htmlDOM + "<div class='card mt-2'><div class='card-header' id='headingOne_" +i+"' data-toggle='collapse' data-target='#collapseOne_" +i+"'><div class='col-10'><h5 class='mb-0'><a data-toggle='collapse' data-target='#collapseOne_" +i+"'>"+date+"</a></h5></div><div class='col-2'><i class='fa fa-arrow-down mt-1'/></div></div></div><div id='collapseOne_" +i+"' class='collapse' aria-labelledby='headingOne_" +i+"' data-parent='#accordion'><div class='card-body' style='background-color:#8080801c'><div class='col-12 d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary'><div class='col-4'><p class='small text-muted mb-1'>OPEN</p><p class='mb-0'>"+open_balance+"</p></div><div class='col-4'><p class='small mb-1' style='color:red;'>EXPENSE</p><p class='mb-0'>"+sum_expense+"</p></div><div class='col-4'><p class='small mb-1' style='color:green;'>INCOME</p><p class='mb-0'>"+sum_income+"</p></div></div><div class='col-4'><div><button class='btn btn-normal' key="+id+" onclick='redirectDailyTrack(this)'>More Info</button></div></div></div></div>";
+            var cash_from_hand_int = 0;
+            var cash_from_shop_int = 0;
+            var  cash_from_hand = "₹0";
+            var cash_from_shop ="₹0";
+            var expenseDetails  = JSON.parse(localStorage.getItem("BussinessLogDetails"));
+            if(expenseDetails != null){
+                var records = expenseDetails.filter(s=>s.daily_log_id == id && s.is_deleted == 0);
+                var cash_from_hand_records = records.filter(s=>s.cash_from == "Hand");
+                var cash_from_shop_records = records.filter(s=>s.cash_from == "Shop");
+                    if(cash_from_hand_records != null && cash_from_hand_records.length > 0){
+                        $.each(cash_from_hand_records, function(i,v){
+                            cash_from_hand_int = cash_from_hand_int + cash_from_hand_records[i].amount;
+                        }); 
+                        cash_from_hand = "₹"+cash_from_hand_int;
+                    }
+                    if(cash_from_shop_records != null && cash_from_shop_records.length > 0){
+                        $.each(cash_from_shop_records, function(i,v){
+                            cash_from_shop_int = cash_from_shop_int + cash_from_shop_records[i].amount;
+                        }); 
+                        cash_from_shop = "₹"+cash_from_shop_int;
+                    }
+            }
+            htmlDOM = htmlDOM + "<div class='card mt-2'><div class='card-header' id='headingOne_" +i+"' data-toggle='collapse' data-target='#collapseOne_" +i+"'><div class='col-10'><h5 class='mb-0'><a data-toggle='collapse' data-target='#collapseOne_" +i+"'>"+date+"</a></h5></div><div class='col-2'><i class='fa fa-arrow-down mt-1'/></div></div></div><div id='collapseOne_" +i+"' class='collapse' aria-labelledby='headingOne_" +i+"' data-parent='#accordion'><div class='card-body' style='background-color:#8080801c'><div class='col-12 d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary'><div class='col-4'><p class='small text-muted mb-1'>OPEN</p><p class='mb-0'>"+open_balance+"</p></div><div class='col-4'><p class='small mb-1' style='color:red;'>EXPENSE</p><p class='mb-0'>"+sum_expense+"</p></div><div class='col-4'><p class='small mb-1' style='color:green;'>INCOME</p><p class='mb-0'>"+sum_income+"</p></div></div><div class='col-12 d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary'><div class='col-6'><p class='small mb-1' style='color:red;'>FROM SHOP</p><p class='mb-0'>"+cash_from_shop+"</p></div><div class='col-6'><p class='small mb-1' style='color:red;'>FROM HAND</p><p class='mb-0'>"+cash_from_hand+"</p></div></div><div class='col-4'><div><button class='btn btn-normal' key="+id+" onclick='redirectDailyTrack(this)'>More Info</button></div></div></div></div>";
         });
         if(htmlDOM != ""){
             $("#accordion").append(htmlDOM);
@@ -298,6 +329,7 @@ function GetExpenseDetails(){
                 localStorage.removeItem("BussinessLogDetails");
             }
             localStorage.setItem("BussinessLogDetails",JSON.stringify(data.records));
+            $('#preloader-active').hide();
         }
       });  
 }

@@ -1,11 +1,12 @@
 var script_url_royal = "https://script.google.com/macros/s/AKfycbznoLRbxmiu2HT4N6FKJTJnssDmNEovXq5oU1XgKiqqpV35r7P4la9DVwDqCMvp-JP58Q/exec";
-$(document).ready(function(){
+$(document).ready(function(){ 
     localStorage.removeItem('BussinessLogs');
     localStorage.removeItem('BussinessLogDetails');
     loadBussinessLogs();
 });
 function loadBussinessLogs()
 {
+    $('#preloader-active').show();
     var tableName = "DailyLog"; 
     var url = script_url_royal + "?table="+tableName+"&action=read"; 
     var request = $.ajax({
@@ -40,6 +41,7 @@ function GetExpenseDetails(){
                 localStorage.removeItem("BussinessLogDetails");
             }
             localStorage.setItem("BussinessLogDetails",JSON.stringify(data.records));
+            $('#preloader-active').hide();
         }
       });  
 }
