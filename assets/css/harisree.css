@@ -167,13 +167,50 @@ a{
 }
 #tbl_tempdata_expense  a{
     float: left;
-    font-size: large !important;
+    font-size: x-small !important;
     padding: 5px;
 }
-#tbl_tempdata_expense thead
+#tbl_tempdata_expense thead, #tbl_tempdata_expense tbody
 {
-    background-color: #ff656aba;
+    font-size: x-small !important;
+}
+#tbl_tempdata_expense tbody tr td
+{
+    word-break: break-all !important;
 }
 table{
-    border: 1px solid !important;
+    border: 1px solid #80808061 !important;
+}
+#headingOne
+{
+    display: flex !important;
+}
+.totlabel
+{
+    font-size: small !important;
+}
+#expense_sum{
+    font-size: large;
+    font-weight: 600;
+    color:red;
+}
+#income_sum
+{
+    font-size: large;
+    font-weight: 600;
+    color:green;
+}
+.card-header{
+    display: flex;
+}
+.btn-normal{
+    padding:20px 30px !important;
+}
+.home{
+    background: #f6f9ff;
+    color: #444444;
+}
+.btna {
+    outline: medium none;
+    color: #635c5c !important;
 }
